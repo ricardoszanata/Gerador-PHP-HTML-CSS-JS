@@ -1,0 +1,61 @@
+object Form1: TForm1
+  Left = 77
+  Height = 696
+  Top = 0
+  Width = 1280
+  Caption = 'Form1'
+  ClientHeight = 696
+  ClientWidth = 1280
+  Position = poDesktopCenter
+  LCLVersion = '2.2.0.4'
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 244
+    Top = 8
+    Width = 200
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Database'
+        FieldName = 'Database'
+      end>
+    DataSource = dm.dsdb
+    TabOrder = 0
+    OnCellClick = DBGrid1CellClick
+  end
+  object DBGrid2: TDBGrid
+    Left = 216
+    Height = 244
+    Top = 8
+    Width = 200
+    Color = clWindow
+    Columns = <>
+    DataSource = dm.dstables
+    TabOrder = 1
+    OnCellClick = DBGrid2CellClick
+  end
+  object DBGrid3: TDBGrid
+    Left = 424
+    Height = 244
+    Top = 8
+    Width = 200
+    Color = clWindow
+    Columns = <>
+    DataSource = dm.dscampos
+    TabOrder = 2
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 432
+    Top = 256
+    Width = 600
+    TabOrder = 3
+  end
+  object Memo2: TMemo
+    Left = 616
+    Height = 432
+    Top = 256
+    Width = 600
+    TabOrder = 4
+  end
+end
