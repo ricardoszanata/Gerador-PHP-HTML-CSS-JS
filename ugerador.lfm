@@ -1,0 +1,171 @@
+object frmgerador: Tfrmgerador
+  Left = 315
+  Height = 821
+  Top = 122
+  Width = 1504
+  Caption = 'GERADOR'
+  ClientHeight = 821
+  ClientWidth = 1504
+  OnClose = FormClose
+  Position = poDesktopCenter
+  LCLVersion = '2.2.0.4'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 72
+    Top = 8
+    Width = 600
+    Caption = 'SELECIONE UM DIRETÓRIO PARA CRIAÇÃO DO PROJETO'
+    ClientHeight = 52
+    ClientWidth = 596
+    TabOrder = 0
+    object btnabrir: TBitBtn
+      Left = 8
+      Height = 40
+      Top = 0
+      Width = 100
+      Caption = 'ABRIR'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Images = dm.ImageList1
+      ImageIndex = 7
+      OnClick = btnabrirClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object lblcaminho: TLabel
+      Left = 112
+      Height = 21
+      Top = 9
+      Width = 12
+      Caption = '...'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 616
+    Height = 72
+    Top = 8
+    Width = 600
+    Caption = 'CAMINHO COMPLETO DO PROJETO GERADO'
+    ClientHeight = 52
+    ClientWidth = 596
+    TabOrder = 1
+    object lblcaminhocompleto: TLabel
+      Left = 8
+      Height = 21
+      Top = 9
+      Width = 12
+      Caption = '...'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -16
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object grpbanco: TGroupBox
+    Left = 8
+    Height = 393
+    Top = 88
+    Width = 201
+    Caption = 'SELECIONE UM BANCO'
+    ClientHeight = 373
+    ClientWidth = 197
+    Enabled = False
+    TabOrder = 2
+    object dbgDatabase: TDBGrid
+      Left = 8
+      Height = 288
+      Top = 8
+      Width = 180
+      Color = clWindow
+      Columns = <>
+      DataSource = dm.dsdb
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 0
+      OnCellClick = dbgDatabaseCellClick
+    end
+    object btngeraconexao: TBitBtn
+      Left = 8
+      Height = 40
+      Top = 304
+      Width = 180
+      Caption = 'GERAR CONEXÃO'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Images = dm.ImageList1
+      ImageIndex = 10
+      OnClick = btngeraconexaoClick
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object grptabela: TGroupBox
+    Left = 216
+    Height = 393
+    Top = 88
+    Width = 201
+    Caption = 'SELECIONE UMA TABELA'
+    ClientHeight = 373
+    ClientWidth = 197
+    Enabled = False
+    TabOrder = 3
+    object dbgDatabase1: TDBGrid
+      Left = 8
+      Height = 288
+      Top = 8
+      Width = 180
+      Color = clWindow
+      Columns = <>
+      DataSource = dm.dstables
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 0
+    end
+    object btngeraphphtml: TBitBtn
+      Left = 8
+      Height = 40
+      Top = 304
+      Width = 180
+      Caption = 'GERAR PHP / HTML'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clNavy
+      Font.Height = -13
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      Images = dm.ImageList1
+      ImageIndex = 12
+      OnClick = btngeraphphtmlClick
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object TreeView1: TTreeView
+    Left = 424
+    Height = 385
+    Top = 96
+    Width = 313
+    AutoExpand = True
+    Images = dm.ImageList1
+    RowSelect = True
+    StateImages = dm.ImageList1
+    TabOrder = 4
+    Options = [tvoAutoExpand, tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+  end
+end

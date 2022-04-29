@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="ZGeradorPHP.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25" Y="8"/>
+        <UsageCount Value="87"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uconfsrv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmconfsrv"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="75" Y="8"/>
+        <UsageCount Value="87"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umodulo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="81"/>
+        <CursorPos X="67" Y="92"/>
+        <UsageCount Value="87"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ugerador.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmgerador"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="622"/>
+        <CursorPos X="47" Y="648"/>
+        <UsageCount Value="87"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uheader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="41" Y="17"/>
+        <UsageCount Value="72"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3578"/>
+        <CursorPos Y="3594"/>
+        <UsageCount Value="3"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="3" Y="1020"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\include\treeview.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1626"/>
+        <CursorPos Y="1642"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\Users\ZANATA\AppData\Local\lazarus\onlinepackagemanager\packages\zeosdbo\src\dbc\ZDbcMySqlUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="292"/>
+        <CursorPos Y="308"/>
+        <UsageCount Value="6"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="127" Column="30" TopLine="111"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="261" Column="6" TopLine="238"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="263" Column="37" TopLine="239"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="262" TopLine="243"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="45" Column="15" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="62" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="73" Column="38" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="93" Column="86" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="174" Column="18" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="102" Column="19" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="95" Column="15" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="108" Column="11" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="100" Column="40" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="99" Column="34" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="107" Column="28" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="103" Column="30" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="101" Column="34" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="107" Column="20" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="114" Column="40" TopLine="95"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="109" Column="37" TopLine="86"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="101" Column="70" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="umodulo.pas"/>
+        <Caret Line="68" Column="46" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="542" TopLine="517"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="40" Column="2" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="36" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="210" Column="71" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="198" Column="24" TopLine="190"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="197" Column="13" TopLine="181"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="560" Column="43" TopLine="571"/>
+      </Position>
+      <Position>
+        <Filename Value="ugerador.pas"/>
+        <Caret Line="325" Column="17" TopLine="316"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

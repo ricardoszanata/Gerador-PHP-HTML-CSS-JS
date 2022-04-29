@@ -1,0 +1,769 @@
+object dm: Tdm
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 508
+  HorizontalOffset = 502
+  VerticalOffset = 194
+  Width = 968
+  object dsdb: TDataSource
+    DataSet = qdb
+    Left = 60
+    Top = 156
+  end
+  object zcon: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    BeforeConnect = zconBeforeConnect
+    Port = 0
+    Protocol = 'mysql-5'
+    Left = 60
+    Top = 44
+  end
+  object qdb: TZQuery
+    Connection = zcon
+    SQL.Strings = (
+      'show databases;'
+    )
+    Params = <>
+    Left = 60
+    Top = 100
+    object qdbDatabase: TStringField
+      FieldKind = fkData
+      FieldName = 'Database'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+  end
+  object zconexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Port = 0
+    Left = 128
+    Top = 44
+  end
+  object qtables: TZQuery
+    Connection = zconexao
+    SQL.Strings = (
+      'show tables;'
+    )
+    Params = <>
+    Left = 128
+    Top = 100
+  end
+  object dstables: TDataSource
+    DataSet = qtables
+    Left = 128
+    Top = 156
+  end
+  object qcampos: TZQuery
+    Connection = zconexao
+    Params = <>
+    Left = 196
+    Top = 100
+  end
+  object dscampos: TDataSource
+    DataSet = qcampos
+    Left = 196
+    Top = 156
+  end
+  object ImageList1: TImageList
+    Left = 60
+    Top = 224
+    Bitmap = {
+      4C7A0F0000001000000010000000C21300000000000078DAED9B095414C7BAC7
+      DB4421F7C5A0CF088ABB4671C3C4974445E2829218155C221205D4A849DCC0B8
+      A3D198684C1411410308080828B2CA2E0A828808A8C8BEC320CCB00D0328EBB0
+      C3FF5635CC846558939B7B4FDEAD73FE676AAAEB57DF575F577557D7F430CCBF
+      2E29C832C36D341857A220220FE3998C6A3FD861848922429B9A8F2D66B6F489
+      1DC9C8746197305B45C7D7CE64C6F4C4AF99C5A8B46361B38109131D3B4ADA21
+      6515BB649977FBCCB7DADF4F45F3B48CD6E907DF453DF1C4C7EF7AE1A3688C24
+      B24B191D918FEDF58E8243077563776B2796E62388C229634BC6001D13927809
+      76E9F9DE468F75B6DDD9879ED8DEF8353399F7BBB0EDC64A7B7ED59640563DF0
+      5DD8DE789A0843FD0FA79F92E2DA5BFFFF4E69CCE930F4A4BF3BFF67A6C99327
+      9FA1EA6B7D5555D57222F4A2F21E78F466BF739D3F2BB5BF56B55DE3CF88BED3
+      BCA43A7F26FFDFF4C793B5861424A8FAC8B2414BFACA774EB4CC4E7B78F53195
+      C12A03E50B931FD33684FA4BA5970F846FDF97FEF29DDBEA2B2F140A3B7CF687
+      2F2B2B83B9B9399B373232425D5D5D9FF9E6E6665CBC7811C5C5C52CF3F2E54B
+      989999F5996F6C6CC4D9B36751545424E60D0D0DFBE57F4949094C4D4DD9BC81
+      81813806FD899FA8CFA2CFBEF2BDE9EF304F3F966564E7C9321307CAA6683249
+      C99A4C6E7FDB98F73B0BF29942BECB75BF880FFD98910F551810BB32741EB30B
+      6544859F6D095539B977DB07229628AB8F2CA8E48F01196428E79B6EE5B6F10D
+      F64B997512D9B5A1F309534EB9E5C6E02F356A6D63AC3E9045A653FE551D711B
+      762ACC9AEEEC2E236C6D5949637565356D07B3CE0045658D4D393FAB16B6F1E5
+      F64B980562568D65CBDBD8C2BAB2E2C6AC238AC8F969292A2BAA515CDE81AD70
+      58D48EA5493D549DB0F594DF6C0D5E3D3F0B19BBC7D2BAC839B314DC9F97F3C5
+      769732F325F6BD631BDC7A3E47DC46B776DB27791559C266B5C53D659BDE990F
+      EE69AD5842CE5B7E1FD924114BBE8BCFAFBF2C33D57649373EF7C2F629C9AB4C
+      24DCCB365676401392B63140D6E0F2A50BBF1A1AD413A19FAAFFC5E0FC79FA59
+      575F8FFEA6BAFA3A88ECD2545858D82FD124F245C43377574A948861986456DD
+      F2C7DE97A8BEF27FD4FF05268E50BC68CF8AE66999BDBD7D1775C7B39CFB3356
+      34DF5FFB92F8BFD2FE1FEDFF1F8DBF245B7F81FD7A3A17FA3D7FEA5AE78F81D1
+      A5F37F60FEFE2AE99A306BA3F9A6F9879EE74C983C4D7E20D79405879E457EFE
+      7DB8D0C3C3C379D2A44983FBC38E55FA6606E161EA995A47D792A74E9DE27EF9
+      E59797D7AC5973504747E7C0A64D9B4E4E9D3AF5888A8A8A82247EE6D15443C2
+      372F5CB2A225373717A3478FC63BEFBC83AAAA2AB4B4B480F883B7DE7A0B6969
+      69C2A3478F6E68CFCA8CFBBFC1A4DF45EB8EFBD593AFD8BD7B371E3C78800B17
+      2EE0F4E9D370717181858505BBBEA529212181D7C9F775D477EF27D942131313
+      444545B1F5343434E8BA0F212121ECF72D5BB6E0E0C183F0F4F434EE10B7C3CF
+      7C940F3C6AC8E464B5D0F5EF983163A0ABAB4BED202C2C0C9F7FFE392E5DBA04
+      252525B60FCB962D5312B1E317ED1C4D6C37CE5C79BC71D6AC59A0F6870E1DCA
+      AEDF69B2B2B2627DF8F9E79F515353835DBB76657488DBC66BFAD4F7C55F1CF0
+      1F326408040201CB2D5EBC18A3468D029FCF47696929DB7F7A5E4E9C38B1470C
+      4F52A1E73C9D286CCA942952DADADAE7939292B20303032B264E9C58A7AEAE5E
+      9195955516131383B6B80ADF7BEFBD11E2B82DFCE6136A7B8EC66FDB7BD8CB18
+      427C593F7DFA74819A9A9A678775E1A1281BC257BE33F6C3B77B1B5FA48D8F95
+      95953F17EFAD11869CF32AD286F580F6B8375BEDA0BE9373AF34C0B9124E94CA
+      302A03BAF513DF53666A5CDBF5EF7C1E509A3579B897F92F3BB3DD0C6CB25DCF
+      FB64399F73B03BFEADEEB10D1F8FDCB761F1E81B87B50F27581E768E313F702F
+      DA74BFBDC9A195DF7C38457E386509A79E73E7624541983B4A529EE2F5CB2408
+      C82737C419C9374E5627DA9C10BE0C22F782C4080832629117FD10299E660837
+      DC59E170EE7D759E8B8141515C083B2645A9B6B6961DAFBCCC5456344FCB4489
+      D6CD0C7645F0292D834CC733E6458961EC73A6BBBB3B7B7D7774744440400012
+      131341C631C8758C2D777070809F9F1F7BFDCE7AEC8D8093EBCC52EC4E3A0892
+      9FA2BCBC9CBDC6D044F3111111484E4E464A4A0ADB4E7575357BFDA1F32A3F3F
+      1FD991F7E07F74954382D5510F41EAF37EDBCF79FE00DE07543D62CCF6071625
+      84F5DB7E4EA43FEEEC5D14F8DC7877043F36B8DFF6B9E1BE70F97A7E44C4C51D
+      89852F02FA6D9F17EE8D5BDBE626849ED3CEE647F977B8B7D173456D50968AE6
+      DB9F3F9AF2C2BD60AFADF832F847CD625EA01D4A621F2037D0165CBF6BC80DB9
+      0D5E529498E7253D47EEC3DBADC7489D92D820E4DCB321FC6C41C089B535E167
+      3622E4877508D457C3FDA3AB10745C0DCFCE6E40BCE305241045FEB41EFE0796
+      C163F742DCD9A504BFFD4B1078F4336ABFE6EE9155F7FD0EAC30DBBC60F2CE4D
+      F3262ED39C3741F547F559C79C76CEE307EC57C67D5D2538682BF28FAB4E3EB6
+      7E8E9C2AD132A29D0EDA33CD88FDFBDDCDA9CDD3C74EB5D751B477D09EEDB059
+      61ECB4BFF3BE9FDCA77A3FC8A9EA9D1169D4A77AA7DF9E327F585FF9BD81A570
+      22CFC722D91534E3536B6E74FB363BB5FF43073EA0148E8216DCE437C3AEB009
+      36F98DB0CA6DC0356E3D4CB36B7125AB06973942186654E3425A15B43C0B3AEC
+      E3ECBC2BC0E9E80AD0CFED7E45F8CAB7085B7DF8D8E25D086DAF42B6FE268F02
+      7C79271F1BDDF3A062950DEAC7DB93E7B3FB9A3AA4DE566F3E6E915B6E5F7535
+      B31E633EDFCFDE2F35489BD4764FF56F12391451B5C09EDF82A34FCAEB6555F5
+      A6B35B07B772A01BF48A2DB723B22D6C860D89E1F5FC2658E535C122B711D778
+      0D30E336C034A71E57B3EBA1E3C517BE3569C11B945F68CEC18967E56CF99597
+      7530C9AA23F1AA85119161660D2E660871215D88F369D5F825B51AE752AAB0FC
+      7ACE6351FCE65ECAC04F09956CF9D9E42A9C49AAC48F8995389D508153F11538
+      19578E13B165384EA41FF31A475EBC86A201C7507C0FBCCA61CB8F46D363AF70
+      28EA150E3E2FC577CF4AB1FF690974238BB12FA2187BC205D8FD4480AD818518
+      FD999E78ADB1DC36872DFF36AC08DF3C2EC2CE503E763CE2637B4821B63D2CC0
+      D6E0026C09CE870E9176503E5639E74014BBB6F17BA6BBB126519FEAFD248ADD
+      DF25650759409010D8A60014C553DD4751DC3D56BCC776A537BFD7FEA83B9E72
+      2D2DCD68696E447353039A1BEB89EAD0D4508BA67A211AEBAA9117E95C72EB88
+      E64792F900964D4A6C82AB4B1392121A085B23661B6BABD0505381BC08A712BD
+      B5CA733BF3D45F6A9772AECEA49DF83A14F30B90969A8CB414B22629C84583B0
+      1CF5D5AFB17783F299AEFCFD76FE12BB754208F8792C9B969288A2022E61CB88
+      5E49E6498CDAF795FA2B28CC65D9B464C2E713BEEA15516937BC3FCB26C6D7C2
+      C5A91E09B1C47E010FA9C909AC8AF2B25157594A542C91E7C7FAB37613E36AE0
+      72BB0E0931D5AC4D964F8A073FF725EA2A8A8904DDF07789CF956C8C5BE35446
+      F81C964D4D8A237C166A095B5BCE97CCC7F8B5635FB37DE5139F299B9A188742
+      1E87656BCA0ABBE17D095B86F8982A383BD620FE4505EB734A622CAB426E26CB
+      D6BCCE97C81746FBB276E3C975DCF996107151656C5F6BCB8B505B46ECBE2E60
+      59E1ABBC6E781FF6DCD45596B07112F5B596B549D857ADACB09427917F19608A
+      C217DE445E2888A2F26CD5730FA23BC87F46E5CE4A12FFDFF91FD0916DA81BD0
+      FCA736E91AB7B3DA8FCDBECEFFC6BAAA2E73A23FF3BFB30F7D99FF22B6B186DA
+      2D67E784683EF565FEB7F7B7B3FDFECE7FDA574973A2B7F92F29FE547D99FFE2
+      BE56B5F6B5C31CEEC3FC6F8D534957F6FFD9FC1F3F71C224C5F7E768122DEE2B
+      336EDCB841E2E7972DDAE7A3636371EDBA2547D2F1CE69F6ECD9A38C7FBB92B2
+      574FD75066D8B037F7E8ED736B6A6A82BBA747BDCC301929B535EAABC9F1C24D
+      5A9B574BE2F54F9E30CD22CFB099591C58D95A0B1E873F41434303D232D26163
+      6F57EC77CFBF85EE035C266D8C1F3FBE8B1FA46C84A58D750EFDAD983E6BD2E7
+      D5224111BBE7457FCBA6ACB79F4FCB2AB5D56ADDF581F86C9D479E6D0B0A0A88
+      CD1B8263278E5B5CBF611BF5F4D933F6F9DAC2FA7A31ED4B67CEE88AF10B7BC7
+      5BE581410FD8DFBDEF787934AF5ABD9ADDDF1C466271C9C4F8057D860E7E180C
+      D25E3D8903879C974522DEE1F62DE4E4E480C7E3213B3B1BD676B6A524D6BF3F
+      DFE8E95AE6E5E7B17E3D79F2042E6EAEA0E756745C6B8B8E3E91B5B99585803E
+      B37BF9F8404B47E75B1919194679D12205374F8F62CE1D13C49BEE47667A4A03
+      E997D1F809132675EEC76EDD7D16914F9FB2BFBF67646622353DFD555A7A7AB3
+      80C4AF3C2B1E217A4A88FB4D17DC971C3FE25F8738282FFA44D9C6CEB681F63F
+      E287B56CDDEE24A90DFD13C7CFDE7676022F3797D88A4371ECC31E5523E0212F
+      2FEF9A78EF574666D0B1E3FA67F7E9EA7E55999B2608D3FFAC471F9EFEB4016E
+      6E6E1692C681A6A6E6AC4ADEEF6DE487DDE962BFFC657CA5B1B1B17A7763896D
+      A3CD8F2CAFDF40BE2FEFEF1CA66DD414E766D59616642829298DECF119FC7FDF
+      66D6CD9F367DC30285D56AEF8FD5509D367CF942F9C17DFA4D71DB74D905E986
+      9B326BDC8EA3C9EB1484B70FA2F8DA574838AEDC62BD6C88CFBBD2CCD09EF8F3
+      9B1638543A1D06FCCE74508BCF8F883D321F4BA60C57EF89B7353A6B58F4E816
+      AAFC2EA0DEE3244A2C778063F00562CE6920CBC71C6A2A4A1FF768FFCB05F61C
+      9BC3A8497C80266E0C84E9E1287DEE8B14DB13F0DD2887C59365D47A7CF7CCF0
+      B4213FC81615DEBFA2C6551F5C230DC41E5F8CA7A75622DDF5E2C0EC47DD4596
+      CBAF08FE7A26F6CE1F797EF9B4119A9D2537544AB67BFB8B907EEB2770435C90
+      FDD0195941B7C179700B1901379176CF1E0936DF83B641F9736B154D3BDBE779
+      1A811BEACECE65BA6747F7E0C87C018F5C5FB8E41A92E26F27E6678F9519E1B4
+      57C5A4ECE681C41AE7C3555CC32F1AA30FCF176687B87661F91A1A281E3D1A49
+      1E16625E52A2C7B2829D517CFA34F83FFE28664BA5A4906D6D8D045F9B5E794E
+      90138A085BCA30107CF081984D4D4D459CF7F55EF98C404770B95C149C3A8552
+      6969314BF744633DAD7AE5D3EEDF64AFC71C0E079C9010314B7FCF89EE43FFE9
+      394AB96B8B24D2D704E26FBC9725620917E36E8E28F3C33DF2746C481A3392C6
+      CFBF68FD3082DC535CA968BE2F0C5903C829CE519C41F3E4FEF44954F40B50D1
+      3C5B468ED13ADDB1A616E6A92E77DC84C4E676AD2DDA46199C4CA4676680E6B5
+      4999A38B93F0AAB969AAA436E6BC3F670665E91E35B599929AC2AE03E89E766C
+      5C1C42C3C2202816E0A693A390D695B867ABA3BDFDE9F367ECFB66AF5EBDC2F3
+      1751A0DF456B822072FFA675BAC46AC28411B48FD4CF18B266A26B0DB26EE26D
+      D2D2D2D8A4ADA5616669C14B4B4FC3C347216C5F685DCAB4BB7FBB86843E62ED
+      E517E4E371D8635056747C959A9A86FFFD7B88898DC1DD7BFE7075770765DAF3
+      D4B7F0C80876AC3E080E02B5FB3BBF7AA3978F37C2C3C3D9B581938B7307BEBD
+      FF0F8282101D1D8DAB66A63C6A97B2C6A65779C1C1C170BBE32ED1FFF6F123EB
+      3D444646E211E98FABBB1B9C5D5C70EFDE3DF8FBFBE38683BDC4F889CE1F8999
+      F0D1A347AC7F94A58CAFAF2F6E393AC2E6862DFBFB2D593B493C7F744C5C32B9
+      9C6A66794D3C7EEC1D1C70C3DE4E3C7E2E5F31111A5C324CED690CB61FBFE616
+      1630BB66DEA7F1FB67CC9FFFA8344C610433E7902B2B9AEF4B9A304F8E19A5DC
+      7A6EE4943E39669B89233699A0F9D6B2053398911FCE9797BF1E2825356C2A29
+      79B33D2BBFD93F75D1E1274246F1D07662D7E8D73B05F8D9AD00344FCB14B67A
+      0A9555936069D90825E5FBB96F488D5014F3B20B677C72284C1891D5023D2B0E
+      7EB89D0FEFF816B8BE68C177B6F9D878EE05DC7C0271D73F122B5664B64C9A14
+      0B29E9F5D73BF8AF7870FB9E6B1CC2010E118DD863C9C5D7E65C9CF22E82A387
+      3F3BB7E8D83E74F87AB3D45BDB8386484BB7AE0B64A68D60E4167E42FD3C7023
+      1F96A18D90D70AE03113F668BCA9BCF7E4DA8C3C98C5C6E1FE832038393B638D
+      D6DEF83765E4D5074B494D691DFC875CB52F67629F7501CC1EB540E70A17941D
+      3C6DDAECF59999822BE47AF2457D3DE6DE0F80C63E434CD376C1A059DFF83283
+      070F15F11B0D33B1D3A200BFF8B760BD21178397E89D5E9F91514CD9F5757590
+      26EB79D96BBE98F99517DEDB1E0C66B6AE3B21DFE8ECFF3AC37C68DD14600327
+      0F26E4BEBF96B052841D69EA8BA95B3CC1CCD866C9C8CD536564A6745D8F2A1E
+      D83EEBE473E8E415C384D85D43AEBF941D61EC8D39FBC221AF130266E6377BC4
+      76DB27D905336476F80A7572052CAB4ED98C0C0C33F4C4D84D5E90D30EC1E463
+      9590FE225448CF75D777E814C7EA7B3EC3C5740E5693EBF790F4740CFDC51D72
+      1BBDC14CDF6AC128ECD82D45D83756FBA7B2E3B4F3DC9F3B7FED8BEC06984470
+      31FC7124987D2763DE5177C3508D8760467EB49CF5998E6D092C4983BEDDA3E7
+      E41E9607DD4B0F5E8D545E613558467E25E9AB0F1B6799F746F63273DE58B36E
+      DD25D95163760C969656269AFB86B4F47866D0A0FF9118ABFFE0B4529E19797B
+      39A39BBC91894BD1645E276B323944AE2E8B9979A3FED16EBE7793523730E6A4
+      7E4D9B5ED0F775895A88526E7DC62CEC89355EC8CC6D7B3FB83A5E8151A22F74
+      7CF02EF38F87EACCD5B677507D7AE24D9499A984FD25E54BE6A452C77677B4B5
+      1BD5DF78E87FC02C6F7BF7B83E518BF9A13FEC3605E6A3B6FE53DFDD8F7ED4F3
+      FF1EDBA715E31805C2C4D33812BB37B6CE64FAF51E17E1D5289BB291893CF621
+      33AEBFFD0ED06456923190CE59C95C5D339C19D45F9E8C9561C487396A239809
+      E306300E09AB49E37659897163FE0DFC5F95FE098F67B00D
+    }
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    Left = 196
+    Top = 224
+  end
+  object zcon1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'information_schema'
+    User = 'root'
+    Protocol = 'mysql-5'
+    Left = 284
+    Top = 44
+  end
+  object qtableschemaPK: TZQuery
+    Connection = zcon1
+    SQL.Strings = (
+      'SELECT * FROM COLUMNS where TABLE_SCHEMA = :tableschema and TABLE_NAME = :tablename and COLUMN_KEY = ''PRI'';'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'tableschema'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tablename'
+        ParamType = ptUnknown
+      end>
+    Left = 284
+    Top = 100
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'tableschema'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tablename'
+        ParamType = ptUnknown
+      end>
+    object qtableschemaPKTABLE_CATALOG: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_CATALOG'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 512
+    end
+    object qtableschemaPKTABLE_SCHEMA: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_SCHEMA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKTABLE_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_NAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKCOLUMN_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_NAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKORDINAL_POSITION: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ORDINAL_POSITION'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qtableschemaPKCOLUMN_DEFAULT: TMemoField
+      FieldKind = fkData
+      FieldName = 'COLUMN_DEFAULT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qtableschemaPKIS_NULLABLE: TStringField
+      FieldKind = fkData
+      FieldName = 'IS_NULLABLE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 3
+    end
+    object qtableschemaPKDATA_TYPE: TStringField
+      FieldKind = fkData
+      FieldName = 'DATA_TYPE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKCHARACTER_MAXIMUM_LENGTH: TLargeintField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_MAXIMUM_LENGTH'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKCHARACTER_OCTET_LENGTH: TLargeintField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_OCTET_LENGTH'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKNUMERIC_PRECISION: TLargeintField
+      FieldKind = fkData
+      FieldName = 'NUMERIC_PRECISION'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKNUMERIC_SCALE: TLargeintField
+      FieldKind = fkData
+      FieldName = 'NUMERIC_SCALE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKDATETIME_PRECISION: TLargeintField
+      FieldKind = fkData
+      FieldName = 'DATETIME_PRECISION'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKCHARACTER_SET_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_SET_NAME'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qtableschemaPKCOLLATION_NAME: TStringField
+      FieldKind = fkData
+      FieldName = 'COLLATION_NAME'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qtableschemaPKCOLUMN_TYPE: TMemoField
+      FieldKind = fkData
+      FieldName = 'COLUMN_TYPE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qtableschemaPKCOLUMN_KEY: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_KEY'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 3
+    end
+    object qtableschemaPKEXTRA: TStringField
+      FieldKind = fkData
+      FieldName = 'EXTRA'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+    object qtableschemaPKPRIVILEGES: TStringField
+      FieldKind = fkData
+      FieldName = 'PRIVILEGES'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object qtableschemaPKCOLUMN_COMMENT: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_COMMENT'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1024
+    end
+    object qtableschemaPKIS_GENERATED: TStringField
+      FieldKind = fkData
+      FieldName = 'IS_GENERATED'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 6
+    end
+    object qtableschemaPKGENERATION_EXPRESSION: TMemoField
+      FieldKind = fkData
+      FieldName = 'GENERATION_EXPRESSION'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+  end
+  object dstableschemaPK: TDataSource
+    DataSet = qtableschemaPK
+    Left = 284
+    Top = 156
+  end
+  object qtableschemaFK: TZQuery
+    Connection = zcon1
+    SQL.Strings = (
+      'SELECT * FROM COLUMNS where TABLE_SCHEMA = :tableschema and TABLE_NAME = :tablename and COLUMN_KEY = ''MUL'';'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'tableschema'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tablename'
+        ParamType = ptUnknown
+      end>
+    Left = 392
+    Top = 100
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'tableschema'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tablename'
+        ParamType = ptUnknown
+      end>
+    object qtableschemaPKTABLE_CATALOG1: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_CATALOG'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 512
+    end
+    object qtableschemaPKTABLE_SCHEMA1: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_SCHEMA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKTABLE_NAME1: TStringField
+      FieldKind = fkData
+      FieldName = 'TABLE_NAME'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKCOLUMN_NAME1: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_NAME'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKORDINAL_POSITION1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ORDINAL_POSITION'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qtableschemaPKCOLUMN_DEFAULT1: TMemoField
+      FieldKind = fkData
+      FieldName = 'COLUMN_DEFAULT'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qtableschemaPKIS_NULLABLE1: TStringField
+      FieldKind = fkData
+      FieldName = 'IS_NULLABLE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 3
+    end
+    object qtableschemaPKDATA_TYPE1: TStringField
+      FieldKind = fkData
+      FieldName = 'DATA_TYPE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 64
+    end
+    object qtableschemaPKCHARACTER_MAXIMUM_LENGTH1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_MAXIMUM_LENGTH'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKCHARACTER_OCTET_LENGTH1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_OCTET_LENGTH'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKNUMERIC_PRECISION1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'NUMERIC_PRECISION'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKNUMERIC_SCALE1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'NUMERIC_SCALE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKDATETIME_PRECISION1: TLargeintField
+      FieldKind = fkData
+      FieldName = 'DATETIME_PRECISION'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qtableschemaPKCHARACTER_SET_NAME1: TStringField
+      FieldKind = fkData
+      FieldName = 'CHARACTER_SET_NAME'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qtableschemaPKCOLLATION_NAME1: TStringField
+      FieldKind = fkData
+      FieldName = 'COLLATION_NAME'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+    object qtableschemaPKCOLUMN_TYPE1: TMemoField
+      FieldKind = fkData
+      FieldName = 'COLUMN_TYPE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      BlobType = ftMemo
+      Transliterate = False
+    end
+    object qtableschemaPKCOLUMN_KEY1: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_KEY'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 3
+    end
+    object qtableschemaPKEXTRA1: TStringField
+      FieldKind = fkData
+      FieldName = 'EXTRA'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 30
+    end
+    object qtableschemaPKPRIVILEGES1: TStringField
+      FieldKind = fkData
+      FieldName = 'PRIVILEGES'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 80
+    end
+    object qtableschemaPKCOLUMN_COMMENT1: TStringField
+      FieldKind = fkData
+      FieldName = 'COLUMN_COMMENT'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1024
+    end
+    object qtableschemaPKIS_GENERATED1: TStringField
+      FieldKind = fkData
+      FieldName = 'IS_GENERATED'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 6
+    end
+    object qtableschemaPKGENERATION_EXPRESSION1: TMemoField
+      FieldKind = fkData
+      FieldName = 'GENERATION_EXPRESSION'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Transliterate = False
+    end
+  end
+  object dstableschemaFK: TDataSource
+    DataSet = qtableschemaFK
+    Left = 392
+    Top = 156
+  end
+end
